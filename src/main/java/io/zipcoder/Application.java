@@ -19,8 +19,6 @@ public class Application {
         int petCount = inout.getIntegerInput("Hello, how many pets you have?");
         inout.getStringInput("");
 
-
-
         for (int i = 0; i < petCount; i++) {
             petStr = inout.getStringInput("Enter Kind of your Pet followed by pets Name:");
             String[] pet = petStr.toLowerCase().split(" ");
@@ -30,7 +28,6 @@ public class Application {
             petListName.add(pet[1]);
 
             Pets pets = new Pets(pet[0],pet[1]);
-          //  pets.setPetType(pet[0]);
         }
 
         for (Map.Entry<String, String> pet : petListMap.entrySet()) {
@@ -39,13 +36,12 @@ public class Application {
                 petName = cat.getPetName();
                 speach = cat.speak();
                 petNameSpeak.put(petName, speach);
-            } else if (petListMap.containsKey("dog")) {
+            } else if (pet.getKey().equals("dog")) {
                 Dog dog = new Dog(petListMap.get("dog"));
                 petName = dog.getPetName();
                 speach = dog.speak();
                 petNameSpeak.put(petName, speach);
-
-            } else if (petListMap.containsKey("rabbit")) {
+            } else if (pet.getKey().equals("rabbit")) {
                 Rabbit rabbit = new Rabbit(petListMap.get("rabbit"));
                 petName = rabbit.getPetName();
                 speach = rabbit.speak();
@@ -54,7 +50,6 @@ public class Application {
                 inout.getStringInput("Please enter a valid pet between: Dog, Cat, Rabbit!");
             }
 
-
             for (Map.Entry<String, String> petSpeak : petNameSpeak.entrySet()) {
                 if (petSpeak.getKey().equals(pet.getValue())) {
                     inout.println("Pet:" + pet.getKey() + " named:" + pet.getValue() + " speaks:" + petSpeak.getValue());
@@ -62,7 +57,6 @@ public class Application {
             }
 
         }
-        
 
         Collections.sort(petListName);
         inout.println("The Pet names list: " + petListName.toString());
