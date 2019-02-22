@@ -59,7 +59,7 @@ public class Pets implements Comparator<Pets> {
         return o1.getPetType().compareTo(o2.getPetType());
     }
 
-    public int compareTo(Pets o) {
-        return this.petType.compareTo(o.getPetType());
-    }
+//    public int compareTo(Pets o) {
+//        return this.petType.compareTo(o.getPetType());
+//    }
 }

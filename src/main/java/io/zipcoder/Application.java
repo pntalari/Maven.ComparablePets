@@ -62,14 +62,18 @@ public class Application {
             }
 
         }
+        
 
-
-        PetSorter petSorter = new PetSorter(petListType);
-        Comparator<PetSorter> comparator = (Comparator<PetSorter>) new PetSorter(petListType);
-
-        inout.println("The list of Pets:", petSorter.sort(comparator));
         Collections.sort(petListName);
-        inout.println("The Pet names: ",petListName );
+        inout.println("The Pet names list: " + petListName.toString());
+
+
+//        PetSorter petSorter = new PetSorter(petListType);
+//        Comparator<Pets> comparator = (Comparator<Pets>) new PetComparator();
+//
+//        inout.println("The list of Pets:", petSorter(comparator));
+//        Collections.sort(petListName);
+//        inout.println("The Pet names: ",petListName.toString() );
 
 //
 //        Iterator itor = petNameSpeak.entrySet().iterator();
@@ -99,5 +103,5 @@ public class Application {
 //            return null;
 //        }
     }
-    
+
 }
