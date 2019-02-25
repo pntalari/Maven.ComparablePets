@@ -8,18 +8,18 @@ import java.util.List;
 
 public class PetSorter<Pets>{
 
-    List<Pets> pet = new ArrayList<Pets>();
+    ArrayList<Pets> pet = new ArrayList<Pets>();
 
-    public PetSorter(List<Pets> pet){
+    public PetSorter(ArrayList<Pets> pet){
         this.pet = pet;
     }
 
     public PetSorter()
     {
-        this.pet = Collections.emptyList();
+
     }
 
-    public List<Pets> sort(Comparator<Pets> comparator){
+    public ArrayList<Pets> sort(Comparator<Pets> comparator){
         Collections.sort(this.pet,comparator);
         return pet;
     }
